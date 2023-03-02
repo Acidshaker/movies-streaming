@@ -9,7 +9,7 @@ const upload = require("./utils/multer");
 const userRouter = require("./users/users.router");
 const authRouter = require("./auth/auth.router");
 const moviesRouter = require("./movies/movies.router");
-const genreRouter = require("./genres /genres.router");
+const genreRouter = require("./genres/genres.router");
 
 const app = express();
 
