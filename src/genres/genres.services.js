@@ -1,11 +1,11 @@
 const genreControllers = require("./genres.controllers.js");
-const responses = require("../utils/handleResponses");
+const { success, error } = require("../utils/handleResponses");
 
 const getAllGenres = (req, res) => {
   genreControllers
     .findAllGenres()
     .then((data) => {
-      responses.success({
+      success({
         res,
         status: 200,
         message: "Getting all Genres",
@@ -13,7 +13,7 @@ const getAllGenres = (req, res) => {
       });
     })
     .catch((err) => {
-      responses.error({
+      error({
         res,
         data: err,
         status: 400,
@@ -27,7 +27,7 @@ const postGenre = (req, res) => {
   genreControllers
     .createGenre(name)
     .then((data) => {
-      responses.success({
+      success({
         res,
         status: 201,
         message: "Genre created successfully",
@@ -35,7 +35,7 @@ const postGenre = (req, res) => {
       });
     })
     .catch((err) => {
-      responses.error({
+      error({
         res,
         data: err,
         status: 400,
